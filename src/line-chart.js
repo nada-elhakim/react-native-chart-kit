@@ -164,7 +164,9 @@ class LineChart extends AbstractChart {
     const { borderRadius = 0 } = style
     const config = {
       width,
-      height
+      height,
+        yLabelColor: this.props.chartConfig.yLabelColor,
+        xLabelColor: this.props.chartConfig.xLabelColor,
     }
     return (
       <View style={style}>

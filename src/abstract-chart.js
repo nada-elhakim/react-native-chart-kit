@@ -29,7 +29,7 @@ class AbstractChart extends Component {
   }
 
   renderHorizontalLabels = config => {
-    const { count, data, height, paddingTop, paddingRight, yLabelsOffset = 12 } = config
+    const { count, data, height, paddingTop, paddingRight, yLabelsOffset = 12, yLabelColor = this.props.chartConfig.color(0.5)} = config
 	var decimalPlaces = (this.props.chartConfig.decimalPlaces !== undefined) ? this.props.chartConfig.decimalPlaces : 2;
     return [...new Array(count)].map((_, i) => {
       return (
@@ -39,7 +39,7 @@ class AbstractChart extends Component {
           textAnchor="end"
           y={(height * 3 / 4) - ((height - paddingTop) / count * i) + 12}
           fontSize={12}
-          fill={this.props.chartConfig.color(0.5)}
+          fill={yLabelColor}
         >{count === 1 ? data[0].toFixed(decimalPlaces) : ((this.calcScaler(data) / (count - 1)) * i + Math.min(...data)).toFixed(decimalPlaces)}
         </Text>
       )
@@ -47,7 +47,7 @@ class AbstractChart extends Component {
   }
 
   renderVerticalLabels = config => {
-    const { labels = [], width, height, paddingRight, paddingTop, horizontalOffset = 0 } = config
+    const { labels = [], width, height, paddingRight, paddingTop, horizontalOffset = 0, xLabelColor = this.props.chartConfig.color(0.5) } = config
     const fontSize = 12
     return labels.map((label, i) => {
       return (
@@ -56,7 +56,7 @@ class AbstractChart extends Component {
           x={((width - paddingRight) / labels.length * (i)) + paddingRight + horizontalOffset}
           y={(height * 3 / 4) + paddingTop + (fontSize * 2)}
           fontSize={fontSize}
-          fill={this.props.chartConfig.color(0.5)}
+          fill={xLabelColor}
           textAnchor="middle"
         >{label}
         </Text>
