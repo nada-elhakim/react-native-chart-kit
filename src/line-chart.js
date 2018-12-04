@@ -184,7 +184,7 @@ class LineChart extends AbstractChart {
               height={height}
               rx={borderRadius}
               ry={borderRadius}
-              fill="url(#backgroundColor)"/>
+              fill="#FFFFFF"/>
             {this.renderHorizontalLines({
               ...config,
               count: 4,
