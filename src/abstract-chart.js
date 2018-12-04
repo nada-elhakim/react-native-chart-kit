@@ -29,13 +29,13 @@ class AbstractChart extends Component {
   }
 
   renderHorizontalLabels = config => {
-    const { count, data, height, paddingTop, paddingRight, yLabelsOffset = 0, yLabelColor = this.props.chartConfig.color(0.5)} = config
+    const { count, data, height, paddingTop, paddingRight, yLabelsOffset = 12, yLabelColor = this.props.chartConfig.color(0.5)} = config
 	var decimalPlaces = (this.props.chartConfig.decimalPlaces !== undefined) ? this.props.chartConfig.decimalPlaces : 2;
     return [...new Array(count)].map((_, i) => {
       return (
         <Text
           key={Math.random()}
-          x={0}
+          x={paddingRight - yLabelsOffset}
           textAnchor="end"
           y={(height * 3 / 4) - ((height - paddingTop) / count * i) + 12}
           fontSize={12}
@@ -53,7 +53,7 @@ class AbstractChart extends Component {
       return (
         <Text
           key={Math.random()}
-          x={((width - paddingRight) / labels.length * (i))}
+          x={((width - paddingRight) / labels.length * (i)) + paddingRight + horizontalOffset}
           y={(height * 3 / 4) + paddingTop + (fontSize * 2)}
           fontSize={fontSize}
           fill={xLabelColor}
