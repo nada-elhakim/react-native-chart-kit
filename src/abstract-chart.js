@@ -21,8 +21,7 @@ class AbstractChart extends Component {
           y1={(height / 4 * i) + paddingTop}
           x2={width}
           y2={(height / 4 * i) + paddingTop}
-          stroke={this.props.chartConfig.color(0.2)}
-          strokeDasharray="5, 10"
+          stroke={this.props.chartConfig.axisColor || this.props.chartConfig.color(0.2)}
           strokeWidth={1}
         />
       )
