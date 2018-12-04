@@ -35,7 +35,7 @@ class AbstractChart extends Component {
       return (
         <Text
           key={Math.random()}
-          x={paddingRight - yLabelsOffset}
+          x={0}
           textAnchor="end"
           y={(height * 3 / 4) - ((height - paddingTop) / count * i) + 12}
           fontSize={12}
@@ -53,7 +53,7 @@ class AbstractChart extends Component {
       return (
         <Text
           key={Math.random()}
-          x={((width - paddingRight) / labels.length * (i)) + paddingRight + horizontalOffset}
+          x={((width - paddingRight) / labels.length * (i))}
           y={(height * 3 / 4) + paddingTop + (fontSize * 2)}
           fontSize={fontSize}
           fill={xLabelColor}
