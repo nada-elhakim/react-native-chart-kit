@@ -9,7 +9,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-native": "0.55.4",
-    "react-native-svg": "^6.4.1",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.4.1",
     "xo": "^0.21.1"
@@ -29,8 +28,7 @@
   "peerDependencies": {
     "react": "> 16.0.0",
     "react-native": ">= 0.50.0",
-    "prop-types": "> 15.6.0",
-    "react-native-svg": "^6.4.1"
+    "prop-types": "> 15.6.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
