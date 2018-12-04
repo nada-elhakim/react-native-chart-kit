@@ -29,7 +29,7 @@ class AbstractChart extends Component {
   }
 
   renderHorizontalLabels = config => {
-    const { count, data, height, paddingTop, paddingRight, yLabelsOffset = 12, yLabelColor = this.props.chartConfig.color(0.5)} = config
+    const { count, data, height, paddingTop, paddingRight, yLabelsOffset = 0, yLabelColor = this.props.chartConfig.color(0.5)} = config
 	var decimalPlaces = (this.props.chartConfig.decimalPlaces !== undefined) ? this.props.chartConfig.decimalPlaces : 2;
     return [...new Array(count)].map((_, i) => {
       return (
